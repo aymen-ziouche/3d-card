@@ -1,6 +1,3 @@
-import 'dart:ffi';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 import 'package:shimmer/shimmer.dart';
@@ -66,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return SingleChildScrollView(
               child: Column(
                 children: [
-                  Container(
+                  const SizedBox(
                     width: double.infinity,
                     height: 20,
                   ),
