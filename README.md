@@ -1,6 +1,6 @@
 # my_3d_experiment
 
-A new Flutter project.
+a 3d card that changes on device's movement
 
 ## Preview
 
