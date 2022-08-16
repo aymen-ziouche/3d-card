@@ -1,6 +1,6 @@
 # my_3d_experiment
 
-a 3d card that changes on device's movement
+A 3d card that changes on device's movement
 
 ## Preview
 
