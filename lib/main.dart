@@ -74,127 +74,155 @@ class _MyHomePageState extends State<MyHomePage> {
                       transform: Matrix4.identity()
                         ..rotateX(posX)
                         ..rotateY(posY),
-                      child: Container(
-                        width: double.infinity - 40,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              stops: [
-                                posY,
-                                posX / posX,
-                                // 0.5,
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: double.infinity - 40,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  stops: [
+                                    posY,
+                                    posX / posX,
+                                    // 0.5,
+                                  ],
+                                  colors: const [
+                                    Colors.purple,
+                                    Colors.orangeAccent,
+                                  ]),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 15,
+                                    spreadRadius: 10,
+                                    offset: Offset(posY * 10, posX * 10)),
                               ],
-                              colors: const [
-                                Colors.purple,
-                                Colors.orangeAccent,
-                              ]),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 15,
-                                spreadRadius: 10,
-                                offset: Offset(posY * 10, posX * 10)),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Text("Paysera",
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white)),
                             ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Column(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Align(
-                                  alignment: Alignment.center,
-                                  child: Text("0123 4567 8901 2345",
+                                const Padding(
+                                  padding: EdgeInsets.all(15.0),
+                                  child: Text("Paysera",
                                       style: TextStyle(
-                                          letterSpacing: 2,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white)),
                                 ),
-                                const Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.only(left: 57, top: 0.5),
-                                    child: Text("1234",
-                                        style: TextStyle(
-                                            fontSize: 10, color: Colors.white)),
-                                  ),
-                                ),
                                 const SizedBox(
-                                  height: 10,
+                                  height: 15,
                                 ),
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: const [
-                                      SizedBox(width: 2),
-                                      Text(
-                                        "02/21",
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
+                                Column(
+                                  children: [
+                                    const Align(
+                                      alignment: Alignment.center,
+                                      child: Text("0123 4567 8901 2345",
+                                          style: TextStyle(
+                                              letterSpacing: 2,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white)),
+                                    ),
+                                    const Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding:
+                                            EdgeInsets.only(left: 57, top: 0.5),
+                                        child: Text("1234",
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.white)),
                                       ),
-                                      SizedBox(width: 30),
-                                      Text.rich(
-                                        TextSpan(
-                                          children: [
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: const [
+                                          SizedBox(width: 2),
+                                          Text(
+                                            "02/21",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.white),
+                                          ),
+                                          SizedBox(width: 30),
+                                          Text.rich(
                                             TextSpan(
-                                                text: "Expires date  ",
-                                                style: TextStyle(
-                                                    fontSize: 10,
-                                                    color: Colors.white)),
-                                            TextSpan(
-                                                text: "02/24",
-                                                style: TextStyle(
-                                                    fontSize: 20,
-                                                    color: Colors.white)),
-                                          ],
-                                        ),
+                                              children: [
+                                                TextSpan(
+                                                    text: "Expires date  ",
+                                                    style: TextStyle(
+                                                        fontSize: 10,
+                                                        color: Colors.white)),
+                                                TextSpan(
+                                                    text: "02/24",
+                                                    style: TextStyle(
+                                                        fontSize: 20,
+                                                        color: Colors.white)),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 2),
+                                        ],
                                       ),
-                                      SizedBox(width: 2),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: const [
-                                    Text("John Doe",
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white)),
-                                    SizedBox(width: 30),
-                                    Text("VISA",
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white)),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: const [
+                                        Text("John Doe",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white)),
+                                        SizedBox(width: 30),
+                                        Text("VISA",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white)),
+                                      ],
+                                    )
                                   ],
-                                )
+                                ),
                               ],
                             ),
-                          ],
-                        ),
+                          ),
+                          Opacity(
+                            opacity: 0.18,
+                            child: Container(
+                              width: double.infinity - 40,
+                              height: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                gradient: LinearGradient(
+                                    begin: Alignment.topRight,
+                                    end: Alignment.bottomLeft,
+                                    stops: [
+                                      posY,
+                                      posX / posX,
+                                      // 0.5,
+                                    ],
+                                    colors: const [
+                                      Colors.pink,
+                                      Colors.green,
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
